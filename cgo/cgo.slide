@@ -1,0 +1,62 @@
+About cgo
+
+Yuki Okubo
+y-okubo@nekojarashi.com
+
+* What is cgo?
+- Go から C のコードを扱う仕組み
+- Ruby における ffi
+- Java における JNI/JNA
+- Swift における BridgingHeader（違う？）
+
+* Example
+.code example.c
+.code example.go
+
+* プリミティブ
+.code primitive.go
+
+* 配列
+.code array.go
+
+* 構造体
+.code struct.go
+
+* 共用体
+.code union.go
+
+* ポインタ
+.code pointer.go
+
+* 関数ポインタ
+.code function_pointer.go
+
+* C のライブラリを Go で使う
+.code curl.go
+
+* Shared Library
+.link http://unokun.hatenablog.jp/entry/2015/07/29/062315 go1.5のshared library機能を使ってみた
+
+* Go で作ったライブラリを C で使う
+.code main.c
+
+* Go で作ったライブラリを Ruby で使う
+.code main.rb
+
+* Go で作ったライブラリを Java で使う
+- JNI は面倒そうなので JNA を使用
+- 生成された `.so` を `.dylib` に名前変更したら動いた
+
+.code Main.java
+
+
+* Go で作ったライブラリを Swift で使う
+用意できませんでした
+
+* 雑感
+- C のコードを入れるとビルド速度が体感で2倍以上遅くなる
+- C のライブラリを Go でラップするのに便利そう
+- Shared Library にすれば他の言語からも呼び出せるので簡単に Go を組み込める
+- cgo is not go
+.link https://go-proverbs.github.io/ Go Proverbs
+- みんなも Go よろう！
